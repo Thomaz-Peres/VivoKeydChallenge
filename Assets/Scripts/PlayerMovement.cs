@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 5.0f;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rig;
 
     public float jumpForce;
 
@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rig = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
 
         StartCoroutine(AjustaVel());
@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) && onGround)
         {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             onGround = false;
         }
     }
