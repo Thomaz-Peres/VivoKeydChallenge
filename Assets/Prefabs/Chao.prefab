@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7752825858816991895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FinalPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6852696612508074175}
   - component: {fileID: 6852696612508074172}
   - component: {fileID: 6852696612508074173}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 6852696613029400942}
   - component: {fileID: 6852696613029400943}
   - component: {fileID: 6852696613029400940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6852696613191902838}
   - component: {fileID: -2638337817335534957}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 6852696613903731035}
   - component: {fileID: 6852696613903731032}
   - component: {fileID: 6852696613903731033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

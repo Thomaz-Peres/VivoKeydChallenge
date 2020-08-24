@@ -16,14 +16,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float jumpLado;
 
-    public bool onGround = true;
+    public bool onGround;
 
     private bool gameOver = false;
 
     public float limiteVel;
+
+    private Animator anim;
+    public Transform chaoVerificador;
     // Start is called before the first frame update
     void Start()
     {
+        anim =  GetComponent<Animator>();
         rig = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
 
@@ -33,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        onGround = Physics.Linecast(transform.position, chaoVerificador.position, 1 << LayerMask.NameToLayer("Chao"));
+        anim.SetBool("chao", onGround);
+
         Movimentacao();
 
         Right();
