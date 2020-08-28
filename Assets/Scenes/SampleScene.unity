@@ -172,12 +172,9 @@ MonoBehaviour:
   jumpForce: 13
   gravityModifier: 3
   jumpLado: 3
-  rayRadius: 0
-  layer:
-    serializedVersion: 2
-    m_Bits: 0
   onGround: 1
   limiteVel: 1000
+  anim: {fileID: 1775197057}
 --- !u!4 &216897801
 Transform:
   m_ObjectHideFlags: 0
