@@ -23,10 +23,15 @@ public class PlayerMovement : MonoBehaviour
     public float limiteVel;
 
     public Animator anim;
+
+    public CapsuleCollider capsuleCollider;
     // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody>();
+
+        capsuleCollider = GetComponent<CapsuleCollider>();
+
         Physics.gravity *= gravityModifier;
         
         StartCoroutine(AjustaVel());
@@ -42,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
         Left();
 
         Jump();
+
+        Baixo();
+
+        anim.SetBool("chao", onGround);
     }
 
     void Movimentacao()
@@ -62,6 +71,15 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision other) 
     {
         onGround = true;
+    }
+
+    void Baixo()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            capsuleCollider.height = 1.50f;
+        }
+        capsuleCollider.height = 3.445158f;
     }
 
     void Right()
