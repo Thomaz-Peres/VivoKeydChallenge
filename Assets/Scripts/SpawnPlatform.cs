@@ -36,12 +36,12 @@ public class SpawnPlatform : MonoBehaviour
     {
         float distance = player.position.z - currentPlatformPoint.position.z;
 
-        if(distance >= 5)
+        if (distance >= 5)
         {
             Recycle(currentPlatforms[platformIndex].gameObject);
             platformIndex++;
 
-            if(platformIndex > currentPlatforms.Count - 1)
+            if (platformIndex > currentPlatforms.Count - 1)
             {
                 platformIndex = 0;
             }

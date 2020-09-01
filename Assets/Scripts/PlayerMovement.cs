@@ -13,12 +13,11 @@ public class PlayerMovement : MonoBehaviour
 
     public float gravityModifier;
 
-    [SerializeField]
-    private float jumpLado;
+    private float jumpLado = 3;
 
     public bool onGround;
 
-    private bool gameOver = false;
+    public bool gameOver = false;
 
     public float limiteVel;
 
