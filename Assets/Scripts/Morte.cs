@@ -13,11 +13,25 @@ public class Morte : MonoBehaviour
 
     void Update() 
     {
-        if(transform.position.x >= 6f)
+        Destroy();
+        
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("obstaculo"))
         {
             Destroy(gameObject);
         }
-        if(transform.position.x <= -6f)
+    }
+
+    void Destroy()
+    {
+        if (transform.position.x >= 7f)
+        {
+            Destroy(gameObject);
+        }
+        if (transform.position.x <= -7f)
         {
             Destroy(gameObject);
         }

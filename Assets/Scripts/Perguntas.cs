@@ -25,11 +25,13 @@ public class Perguntas : MonoBehaviour
 
     IEnumerator TempoPergunta()
     {
-        // yield return new WaitForSeconds(10);
+        while (player.gameOver)
+        {
             yield return new WaitForSeconds(5);
             pergunta.SetActive(true);
 
             yield return new WaitForSeconds(4);
             pergunta.SetActive(false);
+        }
     }
 }

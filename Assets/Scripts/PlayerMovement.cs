@@ -50,6 +50,14 @@ public class PlayerMovement : MonoBehaviour
         Baixo();
 
         anim.SetBool("chao", onGround);
+
+        if(onGround == false)
+        {
+            jumpLado = 0;
+        }
+        else {
+            jumpLado = 3;
+        }
     }
 
     void Movimentacao()
@@ -99,10 +107,10 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator AjustaVel()
     {
-        //ajutasdo minha velocidade
+        //ajutando minha velocidade
         while (!gameOver)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
             if (speed < limiteVel)
             {
                 speed += 1.0f;
