@@ -21,11 +21,6 @@ public class Perguntas : MonoBehaviour
     {
         int index = Random.Range(0, pergunta.Length);
 
-        // yield return new WaitForSeconds(5);
-        // while(player.gameOver == false)
-        // {
-        // }
-
         yield return new WaitForSeconds(5);
         for (int i = 0; i < pergunta.Length; i++)
         {

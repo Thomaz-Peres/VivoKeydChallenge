@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5.0f;
 
     private Rigidbody rig;
-
+    
     public float jumpForce;
 
     public float gravityModifier;
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         Jump();
 
-        Baixo();
+        // Baixo();
 
         anim.SetBool("chao", onGround);
 
@@ -80,14 +80,14 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
     }
 
-    void Baixo()
-    {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            capsuleCollider.height = 1.50f;
-        }
-        capsuleCollider.height = 3.445158f;
-    }
+    // void Baixo()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.S))
+    //     {
+    //         capsuleCollider.height = 1.50f;
+    //     }
+    //     capsuleCollider.height = 3.445158f;
+    // }
 
     void Right()
     {

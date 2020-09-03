@@ -24,7 +24,7 @@ public class Morte : MonoBehaviour
             player.gameOver = true;
         }
     }
-
+    
     void Destroy()
     {
         if (transform.position.x >= 7f)
