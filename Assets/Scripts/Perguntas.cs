@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Perguntas : MonoBehaviour
 {
 
-    public GameObject pergunta;
+    public GameObject[] pergunta;
 
     PlayerMovement player;
 
@@ -17,21 +17,21 @@ public class Perguntas : MonoBehaviour
         StartCoroutine(TempoPergunta());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator TempoPergunta()
     {
-        while (player.gameOver)
-        {
-            yield return new WaitForSeconds(5);
-            pergunta.SetActive(true);
+        int index = Random.Range(0, pergunta.Length);
 
-            yield return new WaitForSeconds(4);
-            pergunta.SetActive(false);
+        // yield return new WaitForSeconds(5);
+        // while(player.gameOver == false)
+        // {
+        // }
+
+        yield return new WaitForSeconds(5);
+        for (int i = 0; i < pergunta.Length; i++)
+        {
+            pergunta[index].SetActive(true);
         }
+        yield return new WaitForSeconds(4);
+        pergunta[index].SetActive(false);
     }
 }

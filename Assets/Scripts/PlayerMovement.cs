@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool onGround;
 
-    public bool gameOver = false;
+    public bool gameOver;
 
     public float limiteVel;
 

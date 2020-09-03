@@ -13,8 +13,7 @@ public class Morte : MonoBehaviour
 
     void Update() 
     {
-        Destroy();
-        
+        Destroy();   
     }
 
     void OnCollisionEnter(Collision other)
@@ -22,6 +21,7 @@ public class Morte : MonoBehaviour
         if (other.gameObject.CompareTag("obstaculo"))
         {
             Destroy(gameObject);
+            player.gameOver = true;
         }
     }
 
@@ -30,10 +30,12 @@ public class Morte : MonoBehaviour
         if (transform.position.x >= 7f)
         {
             Destroy(gameObject);
+            player.gameOver = true;
         }
         if (transform.position.x <= -7f)
         {
             Destroy(gameObject);
+            player.gameOver = true;
         }
     }
 }
