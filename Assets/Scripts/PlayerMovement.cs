@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     
     public float jumpForce;
 
+    public float vida = 3f;
+
     public float gravityModifier;
 
     private float jumpLado = 3;
@@ -47,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         Jump();
 
-        // Baixo();
+        Baixo();
 
         anim.SetBool("chao", onGround);
 
@@ -80,14 +82,13 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
     }
 
-    // void Baixo()
-    // {
-    //     if(Input.GetKeyDown(KeyCode.S))
-    //     {
-    //         capsuleCollider.height = 1.50f;
-    //     }
-    //     capsuleCollider.height = 3.445158f;
-    // }
+    void Baixo()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            anim.SetBool("chao", !onGround);
+        }
+    }
 
     void Right()
     {

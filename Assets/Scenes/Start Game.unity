@@ -1582,6 +1582,7 @@ MonoBehaviour:
   - {fileID: 1066566092}
   - {fileID: 436969090}
   - {fileID: 1783827525}
+  - {fileID: 656589859}
   configScreen: {fileID: 2044626317}
   outfitScreen: {fileID: 1713408231}
 --- !u!4 &1864072412

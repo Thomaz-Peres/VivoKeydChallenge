@@ -5,6 +5,7 @@ using UnityEngine;
 public class Morte : MonoBehaviour
 {
     PlayerMovement player;
+    public GameObject obstaculo;
 
     void Start()
     {
@@ -13,26 +14,21 @@ public class Morte : MonoBehaviour
 
     void Update() 
     {
-        Destroy();   
+        Destroy();
     }
 
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("obstaculo"))
         {
-            Destroy(gameObject);
-            player.gameOver = true;
+            player.vida--;
+            Destroy(other.gameObject);
         }
     }
-    
+
     void Destroy()
     {
-        if (transform.position.x >= 7f)
-        {
-            Destroy(gameObject);
-            player.gameOver = true;
-        }
-        if (transform.position.x <= -7f)
+        if (player.vida <= 0)
         {
             Destroy(gameObject);
             player.gameOver = true;

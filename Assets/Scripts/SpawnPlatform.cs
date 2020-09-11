@@ -7,9 +7,7 @@ public class SpawnPlatform : MonoBehaviour
 
     public List<GameObject> platforms = new List<GameObject>(); // prefabs
     public List<Transform> currentPlatforms = new List<Transform>();    //  objetos instanciados
-
     public int offset;
-
     private Transform player;
     private Transform currentPlatformPoint;
     private int platformIndex;
