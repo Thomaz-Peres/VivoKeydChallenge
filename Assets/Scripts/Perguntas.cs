@@ -17,14 +17,14 @@ public class Perguntas : MonoBehaviour
         player = GetComponent<PlayerMovement>();
         StartCoroutine(TempoPergunta());
 
-        vivo = player.gameOver;
+        vivo = PlayerMovement.gameOver;
     }
 
     IEnumerator TempoPergunta()
     {
         int index = Random.Range(0, pergunta.Length);
 
-        while (!vivo)
+        while (PlayerMovement.gameOver == false)
         {
             yield return new WaitForSeconds(5);
             for (int i = 0; i < pergunta.Length; i++)
@@ -33,6 +33,6 @@ public class Perguntas : MonoBehaviour
             }
             yield return new WaitForSeconds(4);
             pergunta[index].SetActive(false);
-        }
+        }        
     }
 }

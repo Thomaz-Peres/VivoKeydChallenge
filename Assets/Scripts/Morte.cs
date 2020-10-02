@@ -7,6 +7,8 @@ public class Morte : MonoBehaviour
     PlayerMovement player;
     public GameObject obstaculo;
 
+    [SerializeField] private GameObject morreu;
+
     void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -31,7 +33,13 @@ public class Morte : MonoBehaviour
         if (player.vida <= 0)
         {
             Destroy(gameObject);
-            player.gameOver = true;
+            PlayerMovement.gameOver = true;
+            morreu.SetActive(true);
+        }
+        else
+        {
+            PlayerMovement.gameOver = false;
+            morreu.SetActive(false);
         }
     }
 }

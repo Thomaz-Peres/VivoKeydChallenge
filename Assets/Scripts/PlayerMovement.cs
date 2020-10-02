@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]
-    private float speed = 5.0f;
+    [SerializeField] private float speed = 5.0f;
 
     private Rigidbody rig;
     
@@ -19,14 +18,14 @@ public class PlayerMovement : MonoBehaviour
 
     public bool onGround;
 
-    public bool gameOver;
+    public static bool gameOver = false;
 
     public float limiteVel;
 
     public Animator anim;
 
     public CapsuleCollider capsuleCollider;
-    // Start is called before the first frame update
+
     void Start()
     {
         rig = GetComponent<Rigidbody>();
@@ -109,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator AjustaVel()
     {
         //ajutando minha velocidade
-        while (!gameOver)
+        while (gameOver == false)
         {
             yield return new WaitForSeconds(3);
             if (speed < limiteVel)
