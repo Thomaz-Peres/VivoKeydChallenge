@@ -5,9 +5,16 @@ using UnityEngine;
 public class MenuNoJogo : MonoBehaviour
 {
     public bool pause;
-
+    [SerializeField] private AudioSource musicaFase1;
     [SerializeField] private GameObject pausado;
-    void OnClick()
+
+    public void Start()
+    {
+        musicaFase1 = GetComponent<AudioSource>();
+        musicaFase1.Play(1);
+    }
+
+    public void Pause()
     {
         if (!pause)
         {
@@ -23,5 +30,16 @@ public class MenuNoJogo : MonoBehaviour
             }
         }
     }
-    
+
+    public void Restart()
+    {
+        if(PlayerMovement.gameOver == true)
+            Application.LoadLevel(1);
+    }
+
+    public void Sair()
+    {
+        if(PlayerMovement.gameOver == true)
+            Application.LoadLevel(0);
+    }
 }

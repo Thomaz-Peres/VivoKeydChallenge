@@ -8,7 +8,6 @@ public class Audio : MonoBehaviour
     {
         menuMusic = GetComponent<AudioSource>();
         menuMusic.Play(0);
-        
     }
     
 }

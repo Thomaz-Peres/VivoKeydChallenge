@@ -23,14 +23,14 @@ public class Morte : MonoBehaviour
     {
         if (other.gameObject.CompareTag("obstaculo"))
         {
-            player.vida--;
+            PlayerMovement.vida--;
             Destroy(other.gameObject);
         }
     }
 
     void Destroy()
     {
-        if (player.vida <= 0)
+        if (PlayerMovement.vida <= 0)
         {
             Destroy(gameObject);
             PlayerMovement.gameOver = true;

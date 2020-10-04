@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class Perguntas : MonoBehaviour
 {
-
     public GameObject[] pergunta;
     PlayerMovement player;
 
@@ -31,7 +30,7 @@ public class Perguntas : MonoBehaviour
             {
                 pergunta[index].SetActive(true);
             }
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(3);
             pergunta[index].SetActive(false);
         }        
     }
