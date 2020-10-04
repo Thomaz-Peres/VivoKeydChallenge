@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     
     public float jumpForce;
 
-    public static float vida = 3f;
+    public static float vida;
 
     public float gravityModifier;
 

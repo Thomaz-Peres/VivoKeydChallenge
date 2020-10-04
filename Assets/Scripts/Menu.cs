@@ -11,8 +11,8 @@ public class Menu : MonoBehaviour
 
     public void ChamaCena()
     {
-        // Application.LoadLevel("SampleScene");
         SceneManager.LoadScene("SampleScene");
+        PlayerMovement.vida = 3;
     }
 
     public void ChamaConfig()

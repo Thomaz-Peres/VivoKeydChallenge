@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class PerguntaManager : MonoBehaviour
 {
-    [SerializeField] private int dano = 1;
+    [SerializeField] private int dano = 3;
     public GameObject pergunta;
     // pergunta fogo ou raio
     public void Fogo()

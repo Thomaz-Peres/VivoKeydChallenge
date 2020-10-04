@@ -7,6 +7,7 @@ public class Morte : MonoBehaviour
     PlayerMovement player;
     public GameObject obstaculo;
 
+    [SerializeField] private GameObject[] heart;
     [SerializeField] private GameObject morreu;
 
     void Start()
@@ -14,9 +15,22 @@ public class Morte : MonoBehaviour
         player = GetComponent<PlayerMovement>();
     }
 
-    void Update() 
+    void Update()
     {
         Destroy();
+
+        if (PlayerMovement.vida < 1)
+        {
+            Destroy(heart[0].gameObject);
+        }
+        else if (PlayerMovement.vida < 2)
+        {
+            Destroy(heart[1].gameObject);
+        }
+        else if (PlayerMovement.vida < 3)
+        {
+            Destroy(heart[2].gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision other)

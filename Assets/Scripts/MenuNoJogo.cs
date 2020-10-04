@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuNoJogo : MonoBehaviour
 {
@@ -32,14 +33,13 @@ public class MenuNoJogo : MonoBehaviour
     }
 
     public void Restart()
-    {
-        if(PlayerMovement.gameOver == true)
-            Application.LoadLevel(1);
+    {   
+        SceneManager.LoadScene("SampleScene");
+        PlayerMovement.vida = 3;
     }
 
     public void Sair()
     {
-        if(PlayerMovement.gameOver == true)
-            Application.LoadLevel(0);
+        SceneManager.LoadScene("Start Game");
     }
 }
