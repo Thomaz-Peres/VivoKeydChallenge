@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float gravityModifier;
 
-    private float jumpLado = 3;
+    private float jumpLado = 3f;
 
     public bool onGround;
 
@@ -42,9 +42,11 @@ public class PlayerMovement : MonoBehaviour
     {
         Movimentacao();
 
-        Right();
-
-        Left();
+        if(transform.position.x < 3)
+            Right();
+        
+        if(transform.position.x > -3)
+            Left();
 
         Jump();
 
@@ -98,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void Left()
-    {
+    {   
         if (Input.GetKeyUp(KeyCode.A))
         {
             transform.Translate(Vector3.right * jumpLado * -1);
