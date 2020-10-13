@@ -1321,7 +1321,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 9127440e3f1c0784eae6d0cdcd2f3fa7, type: 3}
     m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
@@ -1587,6 +1587,9 @@ MonoBehaviour:
   - {fileID: 656589859}
   configScreen: {fileID: 2044626317}
   outfitScreen: {fileID: 1713408231}
+  screen: {fileID: 0}
+  animator: {fileID: 0}
+  transitionDelayTime: 1
 --- !u!4 &1864072412
 Transform:
   m_ObjectHideFlags: 0

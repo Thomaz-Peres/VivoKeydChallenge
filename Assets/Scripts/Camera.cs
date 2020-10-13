@@ -30,7 +30,7 @@ public class Camera : MonoBehaviour
         posicaoAlvo = personagem.position - distancia;
 
         //atribuindo um novo valor a pos
-        posicao = Vector3.Lerp(posicao, posicaoAlvo, lerpVal);
+        posicao = Vector3.Lerp(posicao, posicaoAlvo, lerpVal * Time.deltaTime);
 
         transform.position = posicao;
     }

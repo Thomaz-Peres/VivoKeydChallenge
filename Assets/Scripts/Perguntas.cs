@@ -8,6 +8,8 @@ public class Perguntas : MonoBehaviour
     public GameObject[] pergunta;
     PlayerMovement player;
 
+    public GameObject inicio;
+
     public bool vivo;
 
     // Start is called before the first frame update
@@ -16,7 +18,19 @@ public class Perguntas : MonoBehaviour
         player = GetComponent<PlayerMovement>();
         StartCoroutine(TempoPergunta());
 
+        StartCoroutine(Inicio());
+
         vivo = PlayerMovement.gameOver;
+    }
+
+    IEnumerator Inicio()
+    {
+        inicio.SetActive(true);
+        if(PlayerMovement.gameOver == false)
+        {
+            yield return new WaitForSeconds(3);
+            inicio.SetActive(false);
+        }
     }
 
     IEnumerator TempoPergunta()
