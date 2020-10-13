@@ -5,13 +5,13 @@ using UnityEngine.UIElements;
 
 public class PerguntaManager : MonoBehaviour
 {
-    [SerializeField] private int dano = 3;
+    [SerializeField] private int dano = 1;
     public GameObject pergunta;
     // pergunta fogo ou raio
     public void Fogo()
     {
         Debug.Log("Clicou no fogo");
-        // PlayerMovement.vida -= dano;
+        // PlayerMovement.vida = PlayerMovement.vida - dano;
         // pergunta.SetActive(false);
 
         //  se for certa, dano no chefe == 1
