@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9127440e3f1c0784eae6d0cdcd2f3fa7
+guid: da6150e96601a3d4a912303556a2df5a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Overthinking_v2
+  fontName: Overthinking
   fontNames:
-  - Overthinking_v2
+  - Overthinking
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

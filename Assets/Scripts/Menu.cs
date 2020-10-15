@@ -8,8 +8,19 @@ public class Menu : MonoBehaviour
     public List<GameObject> configuracoes = new List<GameObject>();
     public GameObject configScreen;
     public GameObject outfitScreen;
+    public GameObject faseScreen;
 
-    public void ChamaCena()
+    public void EscolherFase()
+    {
+        faseScreen.SetActive(true);
+
+        for (int i = 0; i < configuracoes.Count; i++)
+        {
+            configuracoes[i].SetActive(false);
+        }
+    }
+
+    public void Fase1()
     {
         SceneManager.LoadScene("SampleScene");
         PlayerMovement.vida = 3;
