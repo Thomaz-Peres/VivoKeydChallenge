@@ -5,7 +5,7 @@ using UnityEngine;
 public class Morte : MonoBehaviour
 {
     PlayerMovement player;
-    public GameObject obstaculo;
+    public GameObject[] obstaculo;
 
     [SerializeField] private GameObject[] heart;
     [SerializeField] private GameObject morreu;

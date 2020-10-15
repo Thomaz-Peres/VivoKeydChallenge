@@ -50,6 +50,7 @@ public class Menu : MonoBehaviour
     {
         configScreen.SetActive(false);
         outfitScreen.SetActive(false);
+        faseScreen.SetActive(false);
 
         for (int i = 0; i < configuracoes.Count; i++)
         {
