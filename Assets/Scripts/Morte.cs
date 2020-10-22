@@ -6,9 +6,9 @@ public class Morte : MonoBehaviour
 {
     PlayerMovement player;
     public GameObject[] obstaculo;
-
     [SerializeField] private GameObject[] heart;
     [SerializeField] private GameObject morreu;
+    [SerializeField] private GameObject pausado;
 
     void Start()
     {
@@ -41,7 +41,6 @@ public class Morte : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
     void Destroy()
     {
         if (PlayerMovement.vida <= 0)
@@ -49,11 +48,13 @@ public class Morte : MonoBehaviour
             Destroy(gameObject);
             PlayerMovement.gameOver = true;
             morreu.SetActive(true);
+            pausado.SetActive(false);
         }
         else
         {
             PlayerMovement.gameOver = false;
             morreu.SetActive(false);
+            pausado.SetActive(true);
         }
     }
 }

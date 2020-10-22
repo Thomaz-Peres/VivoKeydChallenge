@@ -32,14 +32,15 @@ public class MenuNoJogo : MonoBehaviour
         }
     }
 
-    public void Restart()
-    {   
-        SceneManager.LoadScene("SampleScene");
+    public void gameRestart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PlayerMovement.vida = 3;
     }
 
     public void Sair()
     {
         SceneManager.LoadScene("Start Game");
+        PlayerMovement.vida = 0;
     }
 }

@@ -1,19 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 
 public class PerguntaManager : MonoBehaviour
 {
-    [SerializeField] private int dano = 1;
+    [SerializeField] private float dano = 1;
     public GameObject pergunta;
     // pergunta fogo ou raio
     public void Fogo()
     {
         Debug.Log("Clicou no fogo");
-        // PlayerMovement.vida = PlayerMovement.vida - dano;
-        // pergunta.SetActive(false);
-
+        PlayerMovement.vida -= dano;
+        pergunta.SetActive(false);
         //  se for certa, dano no chefe == 1
         //  se não, ele vai perder 1 de vida
     }
@@ -21,6 +17,7 @@ public class PerguntaManager : MonoBehaviour
     void Raio()
     {
         Debug.Log("Clicou no raio");
+        pergunta.SetActive(false);
         //  se for certa, dano no chefe == 1
         //  se não, ele vai perder 1 de vida
     }

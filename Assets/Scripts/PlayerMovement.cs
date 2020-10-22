@@ -4,33 +4,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 5.0f;
-
+    private float speed = 10f;
+    public float limiteVel = 100f;
     private Rigidbody rig;
-    
-    public float jumpForce;
-
-    [SerializeField] public static float vida = 3;
-
-    public float gravityModifier;
-
+    private float jumpForce = 13f;
+    public static float vida = 3;
+    private float gravityModifier = 3f;
     private float jumpLado = 3f;
-
     public bool onGround;
-
     public static bool gameOver = false;
-
-    public float limiteVel;
-
     public Animator anim;
-
-    public CapsuleCollider capsuleCollider;
 
     void Start()
     {
         rig = GetComponent<Rigidbody>();
-
-        capsuleCollider = GetComponent<CapsuleCollider>();
 
         Physics.gravity *= gravityModifier;
         

@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public GameObject configScreen;
     public GameObject outfitScreen;
     public GameObject faseScreen;
+    public GameObject chamaNois;
 
     public void EscolherFase()
     {
@@ -36,6 +37,16 @@ public class Menu : MonoBehaviour
         }
     }
 
+    public void ChamaNoisNoDale()
+    {
+        chamaNois.SetActive(true);
+
+        for (int i = 0; i < configuracoes.Count; i++)
+        {
+            configuracoes[i].SetActive(false);
+        }
+    }
+
     public void ChamaOutFit()
     {
         outfitScreen.SetActive(true);
@@ -51,10 +62,16 @@ public class Menu : MonoBehaviour
         configScreen.SetActive(false);
         outfitScreen.SetActive(false);
         faseScreen.SetActive(false);
+        chamaNois.SetActive(false);
 
         for (int i = 0; i < configuracoes.Count; i++)
         {
             configuracoes[i].SetActive(true);
         }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

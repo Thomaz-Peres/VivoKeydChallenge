@@ -26,11 +26,9 @@ public class Perguntas : MonoBehaviour
     IEnumerator Inicio()
     {
         inicio.SetActive(true);
-        if(PlayerMovement.gameOver == false)
-        {
-            yield return new WaitForSeconds(3);
-            inicio.SetActive(false);
-        }
+        yield return new WaitForSeconds(3);
+        inicio.SetActive(false);
+       
     }
 
     IEnumerator TempoPergunta()

@@ -27,8 +27,7 @@ public class SpawnPlatform : MonoBehaviour
         currentPlatformPoint = currentPlatforms[platformIndex].GetComponent<FinalPoint>().point;
         //  acima o currentPlatformPoint recebe o ponto do final da plataforma
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         float distance = player.position.z - currentPlatformPoint.position.z;
