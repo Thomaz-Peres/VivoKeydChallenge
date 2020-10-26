@@ -10,17 +10,19 @@ public class PlayerMovement : MonoBehaviour
     private float jumpForce = 13f;
     public static float vida = 3;
     private float gravityModifier = 3f;
-    private float jumpLado = 3f;
+    public float jumpLado = 3f;
     public bool onGround;
     public static bool gameOver = false;
     public Animator anim;
-
+    public SwipeManager swipeControls;
+    public Transform player;
+    private Vector3 desiredPosition;
     void Start()
     {
         rig = GetComponent<Rigidbody>();
 
         Physics.gravity *= gravityModifier;
-        
+
         StartCoroutine(AjustaVel());
     }
 
@@ -37,8 +39,6 @@ public class PlayerMovement : MonoBehaviour
 
         Jump();
 
-        Baixo();
-
         anim.SetBool("chao", onGround);
 
         if(onGround == false)
@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Movimentacao()
+    public void Movimentacao()
     {
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
-    void Jump()
+    public void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onGround)
+        if(Input.GetKeyDown(KeyCode.Space) || (swipeControls.SwipeUp) && onGround)
         {
             rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             onGround = false;
@@ -70,25 +70,17 @@ public class PlayerMovement : MonoBehaviour
         onGround = true;
     }
 
-    void Baixo()
+    public void Right()
     {
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            anim.SetBool("chao", !onGround);
-        }
-    }
-
-    void Right()
-    {
-        if (Input.GetKeyUp(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.D) || (swipeControls.SwipeRight))
         {
             transform.Translate(Vector3.right * jumpLado);
         }
     }
 
-    void Left()
+    public void Left()
     {   
-        if (Input.GetKeyUp(KeyCode.A))
+        if (Input.GetKeyUp(KeyCode.A) || (swipeControls.SwipeLeft))
         {
             transform.Translate(Vector3.right * jumpLado * -1);
         }
