@@ -3,21 +3,64 @@
 public class PerguntaManager : MonoBehaviour
 {
     [SerializeField] private float dano = 1;
-    public GameObject pergunta;
+    public GameObject[] pergunta;
+
     // pergunta fogo ou raio
     public void Fogo()
     {
-        Debug.Log("Clicou no fogo");
-        PlayerMovement.vida -= dano;
-        pergunta.SetActive(false);
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
+        // PlayerMovement.vida--;
         //  se for certa, dano no chefe == 1
         //  se não, ele vai perder 1 de vida
     }
-
-    void Raio()
+    public void Raio()
     {
-        Debug.Log("Clicou no raio");
-        pergunta.SetActive(false);
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
+        //  se for certa, dano no chefe == 1
+        //  se não, ele vai perder 1 de vida
+    }
+    public void Agua()
+    {
+        PlayerMovement.vida--;
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
+        //  se for certa, dano no chefe == 1
+        //  se não, ele vai perder 1 de vida
+    }
+    public void Pedra()
+    {
+        PlayerMovement.vida--;
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
+        //  se for certa, dano no chefe == 1
+        //  se não, ele vai perder 1 de vida
+    }
+    public void Peito()
+    {
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
+        //  se for certa, dano no chefe == 1
+        //  se não, ele vai perder 1 de vida
+    }
+    public void Cabeca()
+    {
+        PlayerMovement.vida--;
+        foreach (var perguntas in pergunta)
+        {
+            perguntas.SetActive(false);
+        }
         //  se for certa, dano no chefe == 1
         //  se não, ele vai perder 1 de vida
     }

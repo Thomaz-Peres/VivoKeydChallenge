@@ -5,6 +5,7 @@ using UnityEngine;
 public class Morte : MonoBehaviour
 {
     PlayerMovement player;
+    AudioSource colisao;
     public GameObject[] obstaculo;
     [SerializeField] private GameObject[] heart;
     [SerializeField] private GameObject morreu;
@@ -13,6 +14,7 @@ public class Morte : MonoBehaviour
     void Start()
     {
         player = GetComponent<PlayerMovement>();
+        colisao = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -37,6 +39,7 @@ public class Morte : MonoBehaviour
     {
         if (other.gameObject.CompareTag("obstaculo"))
         {
+            colisao.Play(0);
             PlayerMovement.vida--;
             Destroy(other.gameObject);
         }

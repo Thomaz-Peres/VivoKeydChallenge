@@ -1,15 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Perguntas : MonoBehaviour
 {
     public GameObject[] pergunta;
     PlayerMovement player;
-
     public GameObject inicio;
-
     public bool vivo;
 
     // Start is called before the first frame update
@@ -17,26 +13,33 @@ public class Perguntas : MonoBehaviour
     {
         player = GetComponent<PlayerMovement>();
         StartCoroutine(TempoPergunta());
-
+        Time.timeScale = 0;
+        inicio.SetActive(true);
         StartCoroutine(Inicio());
-
         vivo = PlayerMovement.gameOver;
+    }
+
+    public void Click()
+    {
+        if(Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+            inicio.SetActive(false);
+        }
     }
 
     IEnumerator Inicio()
     {
         inicio.SetActive(true);
         yield return new WaitForSeconds(3);
-        inicio.SetActive(false);
-       
     }
 
     IEnumerator TempoPergunta()
     {
-        int index = Random.Range(0, pergunta.Length);
-
+        yield return new WaitForSeconds(1);
         while (PlayerMovement.gameOver == false)
         {
+            int index = Random.Range(0, pergunta.Length);
             yield return new WaitForSeconds(5);
             for (int i = 0; i < pergunta.Length; i++)
             {

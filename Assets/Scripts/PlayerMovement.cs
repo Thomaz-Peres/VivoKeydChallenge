@@ -9,24 +9,24 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rig;
     private float jumpForce = 13f;
     public static float vida = 3;
-    private float gravityModifier = 3f;
+    // public static float gravityModifier = 3f;
     public float jumpLado = 3f;
-    public bool onGround;
+    public static bool onGround;
     public static bool gameOver = false;
     public Animator anim;
     public SwipeManager swipeControls;
     public Transform player;
     private Vector3 desiredPosition;
+
     void Start()
     {
         rig = GetComponent<Rigidbody>();
 
-        Physics.gravity *= gravityModifier;
+        // Physics.gravity *= gravityModifier;
 
         StartCoroutine(AjustaVel());
     }
 
-    // Update is called once per frame
     void Update()
     {
         Movimentacao();
@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if(transform.position.x > -3)
             Left();
 
-        Jump();
+        // Jump();
 
         anim.SetBool("chao", onGround);
 
@@ -55,15 +55,15 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
-    public void Jump()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) || (swipeControls.SwipeUp) && onGround)
-        {
-            rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            onGround = false;
-            anim.SetBool("chao", onGround);
-        }
-    }
+    // public void Jump()
+    // {
+    //     if(Input.GetKeyDown(KeyCode.Space) || (swipeControls.SwipeUp) && onGround)
+    //     {
+    //         rig.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    //         onGround = false;
+    //         anim.SetBool("chao", onGround);
+    //     }
+    // }
 
     private void OnCollisionEnter(Collision other) 
     {
@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator AjustaVel()
     {
+        yield return new WaitForSeconds(1);
         //ajutando minha velocidade
         while (gameOver == false)
         {

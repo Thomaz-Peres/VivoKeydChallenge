@@ -34,7 +34,7 @@ public class MenuNoJogo : MonoBehaviour
 
     public void gameRestart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("SampleScene");
         PlayerMovement.vida = 3;
     }
 
