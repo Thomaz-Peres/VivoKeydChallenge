@@ -38,6 +38,12 @@ public class MenuNoJogo : MonoBehaviour
         PlayerMovement.vida = 3;
     }
 
+    public void gameRestart2()
+    {
+        SceneManager.LoadScene("Fase2");
+        PlayerMovement.vida = 3;
+    }
+
     public void Sair()
     {
         SceneManager.LoadScene("Start Game");

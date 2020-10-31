@@ -27,6 +27,12 @@ public class Menu : MonoBehaviour
         PlayerMovement.vida = 3;
     }
 
+    public void Fase2()
+    {
+        SceneManager.LoadScene("Fase2");
+        PlayerMovement.vida = 3;
+    }
+
     public void ChamaConfig()
     {
         configScreen.SetActive(true);
